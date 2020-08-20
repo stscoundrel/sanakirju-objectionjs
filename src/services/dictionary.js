@@ -22,7 +22,6 @@ const formatEntries = (entries) => {
 
   for (let i = 0; i < entries.length; i += 1) {
     entries[i].definitions.forEach((definition) => {
-      console.log(definition)
       formattedEntries.push(formatEntry(entries[i].word, definition))
     })
   }
@@ -35,9 +34,28 @@ const formatEntries = (entries) => {
  */
 const formatEntry = (word, definition) => ({
   word,
-  definition: definition.definition,
-  examples: definition.examples,
+  definition: formatDefinition(definition.definition),
+  examples: formatExamples(definition.examples),
 })
+
+/**
+ * Some definitions are empty arrays.
+ * Swap to empty strings.
+ */
+const formatDefinition = (definition) => {
+  if (typeof definition !== 'string') {
+    return ''
+  }
+
+  return definition
+}
+
+/**
+ * Format examples to look like their model.
+ */
+const formatExamples = (examples) => examples.map((example) => ({
+  example,
+}))
 
 module.exports = {
   getWords,
