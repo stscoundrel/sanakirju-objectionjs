@@ -8,7 +8,6 @@ const knexConf = require('./knexfile.js')
  */
 const setup = async (clientConfig) => {
   const knex = getKnex(clientConfig)
-  Model.knex(knex)
 
   await migrateTables(knex)
 }
@@ -18,7 +17,10 @@ const setup = async (clientConfig) => {
  */
 const getKnex = (clientConf) => {
   const config = getConfig(clientConf)
-  return Knex(config)
+  const knex = Knex(config)
+  Model.knex(knex)
+
+  return knex
 }
 
 /**
@@ -43,4 +45,5 @@ const migrateTables = async (knex) => {
 
 module.exports = {
   setup,
+  connect: getKnex
 }
