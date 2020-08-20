@@ -4,6 +4,7 @@ exports.up = function (knex) {
       table.increments('id').primary()
       table.string('word')
       table.string('definition')
+      table.string('startsWith')
     })
 }
 
