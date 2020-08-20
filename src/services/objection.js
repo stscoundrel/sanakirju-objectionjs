@@ -1,5 +1,6 @@
-const sanakirju = require('sanakirju')
 const database = require('../database/setup.js')
+const dictionary = require('./dictionary.js')
+const Word = require('../models/Word.js')
 
 /**
  * Set up Knex & Objection DB.
@@ -8,9 +9,25 @@ const database = require('../database/setup.js')
 const toObjection = async (clientConfig) => {
   database.setup(clientConfig)
 
-  const dictionary = await sanakirju.fromXML()
+  try {
+    const words = await dictionary.getWords()
 
-  return dictionary
+    for (let i = 0; i < words.length; i += 1) {
+      await insertWord(words[i])
+    }
+
+    return { status: true }
+  } catch (err) {
+    return { status: false, err }
+  }
+}
+
+/**
+ * Insert word into DB.
+ * Transaction of word + examples.
+ */
+const insertWord = async (entry) => {
+  await Word.query().insertGraph(entry)
 }
 
 module.exports = toObjection
