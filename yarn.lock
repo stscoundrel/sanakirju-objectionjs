@@ -2408,10 +2408,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sanakirju@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/sanakirju/-/sanakirju-1.0.3.tgz#aa70097bc5b6b86278079306bf2fb04d01156647"
-  integrity sha512-RcVVM7H6Y/hkmPv7LdLPq8bPdpP2Yl+3ucyUItVHnv4wZSgcy1Tyr+X6p79lu5JdHynfSzhKpAeGXiRUpnso1g==
+sanakirju@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/sanakirju/-/sanakirju-1.0.4.tgz#783f6ab94b4a3ae03e4f6cbf9cf879af4ddea962"
+  integrity sha512-BjyyJgCVlKD1J/RIk0dbEPvzCtGoEIV3aa+LV/nCxQXB6SJIk5OTfglGIP8l2UvQdzqhJlb4YZlBs+4bOV0E0A==
   dependencies:
     puppeteer "^5.2.1"
     xml2js "^0.4.23"
