@@ -1,14 +1,23 @@
 # Sanakirju Objection.js
 
-Objection.js / SQL implementation of Sanakirju, a Karelian - Finnish dictionary with over 90 000 words. Based on data from Karjalan Kielen Sanakirja.
+[Objection.js](https://vincit.github.io/objection.js/) / SQL implementation of Sanakirju, a Karelian - Finnish dictionary with over 90 000 words. Based on data from Karjalan Kielen Sanakirja. Provides migration & model for Knex supported SQL databases, like PostgreSQL, MySQL, MariaDB or SQLite.
 
 ### Install
 
 `yarn add sanakirju-objectionjs`
 
+You also need to install the database driver you're going to use.
+
+```
+npm install pg
+npm install sqlite3
+npm install mysql
+npm install mysql2
+```
+
 ### Usage
 
-sanakirju-objectionjs uses the core sanakirju to fetch all the dictionary data from XML files. Provides migration & model for Knex supported SQL databases, like PostgreSQL, MySQL, MariaDB or SQLite.
+sanakirju-objectionjs uses the core sanakirju to fetch all the dictionary data from XML files. 
 
 ##### Set up database.
 
