@@ -19,7 +19,7 @@ class Example extends Model {
   }
 
   static get relationMappings() {
-    const Word = require('./Word')
+    const Word = require('./Word') // eslint-disable-line global-require
 
     return {
       word: {

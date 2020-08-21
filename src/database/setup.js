@@ -29,11 +29,13 @@ const getKnex = (clientConf) => {
  * but keeps our migrations folder.
  */
 const getConfig = (clientConf) => {
-  if (clientConf.migrations) {
-    delete clientConf.migrations
+  const overrides = clientConf
+
+  if (overrides.migrations) {
+    delete overrides.migrations
   }
 
-  return { ...knexConf, ...clientConf }
+  return { ...knexConf, ...overrides }
 }
 
 /**
@@ -45,5 +47,5 @@ const migrateTables = async (knex) => {
 
 module.exports = {
   setup,
-  connect: getKnex
+  connect: getKnex,
 }

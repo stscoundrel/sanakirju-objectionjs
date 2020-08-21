@@ -20,7 +20,7 @@ class Word extends Model {
   }
 
   static get relationMappings() {
-    const Example = require('./Example')
+    const Example = require('./Example') // eslint-disable-line global-require
 
     return {
       examples: {
@@ -37,7 +37,7 @@ class Word extends Model {
   /**
    * Autoinsert "startsWith" by word.
    */
-  $beforeInsert(context) {
+  $beforeInsert() {
     this.startsWith = this.word.charAt(0)
   }
 }

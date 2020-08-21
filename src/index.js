@@ -5,5 +5,5 @@ const { connect } = require('./database/setup.js')
 module.exports = {
   toObjection,
   Model,
-  connect
+  connect,
 }
